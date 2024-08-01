@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- na starts -->
+
+    <div class="nav">
+      <div class="heading">
+        <img src="./img/favicon.png" alt="" />
+        <p>Password Manager</p>
+      </div>
+      <button id="logout">Log Out</button>
+    </div>
+
+    <!-- nav ends -->
+
+    <div class="actualbody">
+      <!-- adding side starts -->
+
+      <div class="addnewside">
+        <button id="add">Add New</button>
+        <div class="passworddetails">
+          <div class="selectsite">
+            <label for="sitename">Select The Site :</label>
+            <select name="sitename" id="sitename">
+              <option value="socialmedia">Social Media</option>
+              <option value="gmail">Gmail</option>
+              <option value="banking">Banking</option>
+              <option value="microsoft">Microsoft</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div class="remark">
+            <label for="Passwordfor">Enter Name For Your Password : </label>
+            <input name="Passwordfor" type="text" placeholder="Type Here" />
+          </div>
+
+          <div class="details">
+            <div class="username">
+              <label for="username">Enter Your Username Here : </label>
+              <input name="username" type="text" placeholder="Username" />
+            </div>
+            <div class="password">
+              <label for="password">Enter Your Password Here : </label>
+              <input name="Password" type="text" placeholder="Password" />
+            </div>
+          </div>
+          <button id="submit">Submit</button>
+        </div>
+
+        <div class="passwordsqueue">
+            <div class="queueheading">
+                <img src="./img/gmail.png" alt="">
+                <p>Gmail</p>
+            </div>
+          <div class="passwordbox">
+            <div class="pass">
+              <p>Instagram</p>
+              <img src="./img/eye.svg" alt="" />
+            </div>
+            <div class="droppass">
+                <div class="dropusername">
+                    <p>usernameydfwytjfdatuydftyjcxyutcwxuyrcyrucx</p>
+                    <img id="copyusername" src="./img/copy.svg" alt="">
+                </div>
+                <div class="droppassword">
+                    <p>passworddhwgceytcxu6rcEXRYTC</p>
+                    <img id="copypassword" src="./img/copy.svg" alt="">
+                </div>
+            </div>
+          </div>
+          <div class="passwordbox">
+            <div class="pass">
+              <p>Instagram</p>
+              <img src="./img/eye.svg" alt="" />
+            </div>
+            <div class="droppass">
+                <div class="dropusername">
+                    <p>usernameydfwytjfdatuydftyjcxyutcwxuyrcyrucx</p>
+                    <img id="copyusername" src="./img/copy.svg" alt="">
+                </div>
+                <div class="droppassword">
+                    <p>passworddhwgceytcxu6rcEXRYTC</p>
+                    <img id="copypassword" src="./img/copy.svg" alt="">
+                </div>
+            </div>
+          </div>
+          <div class="passwordbox">
+            <div class="pass">
+              <p>Instagram</p>
+              <img src="./img/eye.svg" alt="" />
+            </div>
+            <div class="droppass">
+                <div class="dropusername">
+                    <p>usernameydfwytjfdatuydftyjcxyutcwxuyrcyrucx</p>
+                    <img id="copyusername" src="./img/copy.svg" alt="">
+                </div>
+                <div class="droppassword">
+                    <p>passworddhwgceytcxu6rcEXRYTC</p>
+                    <img id="copypassword" src="./img/copy.svg" alt="">
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- aviablesites side starts -->
+
+      <div class="sitesside">
+        <div class="allsites"><p>All Avialable Sites</p></div>
+        <div class="sitesname">
+          <div class="site">
+            <img src="./img/socialmedia.png" alt="" />
+            <p>Social Media</p>
+          </div>
+          <div class="site">
+            <img src="./img/gmail.png" alt="" />
+            <p>Gmail</p>
+          </div>
+          <div class="site">
+            <img src="./img/bank.png" alt="" />
+            <p>Banking</p>
+          </div>
+          <div class="site">
+            <img src="./img/microsoft.png" alt="" />
+            <p>Microsoft</p>
+          </div>
+          <div class="site">
+            <img src="./img/others.png" alt="" />
+            <p>Others</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
