@@ -228,6 +228,21 @@ body {
     gap:3vh;
     margin-top:2vh;
 }
+.passwordbox{
+    position:relative;
+}
+.delete{
+    display:none;
+    position:absolute;
+    top:20%;
+    left:1.5%;
+    width:30px;
+    height:30px;
+    padding:10px;
+    background-color: black;
+    border-radius:50%;
+    cursor: pointer;
+}
 .queueheading{
     color:whitesmoke;
     display: flex;
@@ -255,14 +270,20 @@ body {
     align-items: center;
     justify-content: space-between;
     cursor:pointer;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
 }
 .pass:hover{
     background-color: #111111;
 }
+.pass img{
+    width:30px;
+    height:30px;
+    filter:invert();
+}
 .droppass{
     width:60vw;
-    height:15vh;
+    height:0vh;
+    opacity:0;
     margin:0px auto;
     border-radius: 10px;
     display: flex;
@@ -272,6 +293,11 @@ body {
     color:whitesmoke;
     padding:0rem 1.5rem;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+.showdrop{
+    height:15vh;
+    opacity: 1;
 }
 .dropusername p,.droppassword p{
     background-color:#121212;

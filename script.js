@@ -1,0 +1,100 @@
+// submit password function:
+let remarkinput = document.querySelector(".remark input");
+let usernameinput = document.querySelector(".username input");
+let passwordinput = document.querySelector(".password input");
+let passwordqueue = document.querySelector(".passwordsqueue");
+let selectsite = document.querySelector(".selectsite select");
+let submit = document.querySelector("#submit");
+let site  = [];
+
+submit.addEventListener("click", () => {
+    if (remarkinput.value === "" || usernameinput.value === "" || passwordinput.value === "") {
+        alert("Please Fill All The Details")
+    } else {
+         site.push(selectsite.value);
+        passwordqueue.innerHTML = passwordqueue.innerHTML + ` <div class="passwordbox">
+            <img class="delete" src="./img/delete.svg">
+            <div class="pass">
+              <p>${remarkinput.value}</p>
+              <img src="./img/eye.png" alt="" />
+            </div>
+            <div class="droppass">
+                <div class="dropusername">
+                    <p>${usernameinput.value}</p>
+                    <img id="copyusername" src="./img/copy.svg" alt="">
+                </div>
+                <div class="droppassword">
+                    <p>${passwordinput.value}</p>
+                    <img id="copypassword" src="./img/copy.svg" alt="">
+                </div>
+            </div>
+          </div>`
+        //   remarkinput.value = "";
+        //   usernameinput.value = "";
+        //   passwordinput.value = "";
+        droppingfunction();
+        filtering(site);
+        saveData();
+    }
+})
+
+// let filtering = (site)=>{
+//     let pass = document.querySelectorAll(".pass");
+//     pass.forEach((e)=>{
+//         console.log(e.site)
+//     })
+// }
+
+// dropping password section
+const droppingfunction = () => {
+
+    let droppass = document.querySelectorAll(".droppass");
+    let pass = document.querySelectorAll(".pass");
+    let allpasswordbox = document.querySelectorAll(".passwordbox");
+
+    // deleting function
+    allpasswordbox.forEach((box)=>{
+        box.addEventListener("click", (e)=>{
+            if(e.target.classList.contains("delete")){
+                box.remove();
+                saveData();
+            } 
+        })
+    })
+
+    // giving index to showdrop
+    pass.forEach((pass, index) => {
+        pass.addEventListener("click", () => {
+            showdrop(index);
+        })
+    })
+
+    // showing username and password
+    const showdrop = (index) => {
+        if (droppass[index].classList.contains("showdrop")) {
+            droppass[index].classList.remove("showdrop");
+            pass[index].children[1].src = "./img/eye.png";
+            allpasswordbox[index].children[0].style.display = "none";
+        } else {
+            droppass[index].classList.add("showdrop");
+            pass[index].children[1].src = "./img/unsee.png";
+            allpasswordbox[index].children[0].style.display = "block";
+        }
+    }
+    saveData();
+}
+
+// saving data in local 
+let saveData = () => {
+    localStorage.setItem("data", passwordqueue.innerHTML);
+}
+// getting all data when page loaded
+let getData = () => {
+    const savedData = localStorage.getItem("data");
+    if (savedData) {
+        passwordqueue.innerHTML = savedData;
+        droppingfunction();
+    }
+}
+getData();
+// localStorage.clear();
