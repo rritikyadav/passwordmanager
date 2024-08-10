@@ -222,7 +222,7 @@ body {
   scale: 1.1;
 }
 .passwordsqueue{
-    /* display: none !important; */
+    display: none;
     display:flex;
     flex-direction: column;
     gap:3vh;
@@ -230,6 +230,7 @@ body {
 }
 .passwordbox{
     position:relative;
+    display:none;
 }
 .delete{
     display:none;
@@ -252,6 +253,9 @@ body {
     font-size:1.5rem;
     font-weight: bold;
     margin-bottom:3vh;
+}
+.showqueueheading{
+    display:none;
 }
 .queueheading img{
     width:30px;
