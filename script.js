@@ -29,9 +29,25 @@ submit.addEventListener("click", () => {
                 </div>
             </div>
           </div>`
-        //   remarkinput.value = "";
-        //   usernameinput.value = "";
-        //   passwordinput.value = "";
+
+        //   making all the input null
+          remarkinput.value = "";
+          usernameinput.value = "";
+          passwordinput.value = "";
+
+        // working of saved button
+        let done = document.querySelector(".done");
+        done.style.width = "9vw";
+        done.style.opacity = "1";
+        done.style.bottom = "5vh";
+
+        // again hiding the saved button
+        setTimeout(() => {
+            done.style.width = "0vw";
+            done.style.opacity = "0";
+            done.style.bottom = "0vh";
+        },2000)
+
         droppingfunction();
         saveData();
     }
@@ -78,20 +94,25 @@ const droppingfunction = () => {
 }
 
 
-
+// working of saved passwords
 let formsection = document.querySelector(".passworddetails");
-let queueheading = document.querySelector(".queueheading");
 let add = document.querySelector("#add");
 let sites = document.querySelectorAll(".site");
 sites.forEach((site) => {
     site.addEventListener("click", (e) => {
-        let text = e.target.innerText.replace(" ", "").trim();
+        let text = e.currentTarget.children[1].innerText.replace(" ", "").trim();
         formsection.style.display = "none";
         add.style.display = "block";
+
+        // filtering passwords
         document.querySelectorAll(".passwordbox").forEach((box) => {
             box.style.display = box.classList.contains(text)? "block":"none";
         });
-        queueheading.children[1].innerText = e.target.innerText;
+        
+        // changing heading of the heading of paswords:-
+        let queueheading = document.querySelector(".queueheading");
+        queueheading.classList.remove("hidequeueheading")
+        queueheading.children[1].innerText = e.currentTarget.children[1].innerText;
         queueheading.children[0].src = `./img/${text}.png`;
     });
 });
@@ -101,13 +122,15 @@ sites.forEach((site) => {
 add.addEventListener("click", (e) => {
     formsection.style.display = "flex";
     add.style.display = "none";
+    let queueheading = document.querySelector(".queueheading");
+    queueheading.classList.add("hidequeueheading");
 });
 
 
 // saving data in local 
 let saveData = () => {
     localStorage.setItem("data", passwordqueue.innerHTML);
-    // droppingfunction();
+    droppingfunction();
 };
 
 // getting all data when page loaded
@@ -119,4 +142,3 @@ let getData = () => {
     }
 };
 getData();
-localStorage.clear();
