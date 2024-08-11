@@ -90,7 +90,7 @@ const droppingfunction = () => {
             allpasswordbox[index].children[0].style.display = "block";
         }
     }
-    saveData();
+    // saveData();
 }
 
 
@@ -142,3 +142,4 @@ let getData = () => {
     }
 };
 getData();
+// localStorage.clear();
