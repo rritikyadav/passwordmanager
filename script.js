@@ -129,13 +129,13 @@ add.addEventListener("click", (e) => {
 
 // saving data in local 
 let saveData = () => {
-    localStorage1.setItem("data", passwordqueue.innerHTML);
+    localStorage.setItem("data", passwordqueue.innerHTML);
     // droppingfunction();
 };
 
 // getting all data when page loaded
 let getData = () => {
-    const savedData = localStorage1.getItem("data");
+    const savedData = localStorage.getItem("data");
     if (savedData) {
         passwordqueue.innerHTML = savedData;
         droppingfunction();
